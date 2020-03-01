@@ -2,6 +2,11 @@
 
 > ### 基于Vue3.0+Typescript构建的空白项目，css样式的初始化，以及基本常用的axios,vue-router,模块化使用vuex，element-ui已经按需引入配置好，包括打包优化的cdn引入，代码压缩，图片压缩，关闭map等打包优化都已配置完成
 
+> #### 关于作者:cooldream
+> #### 个人网站:https://www.cooldream.fun
+> #### 个人简书博客地址:https://www.jianshu.com/u/9985e2c26c3a
+> #### 个人掘金博客地址: https://juejin.im/user/5d4c28015188253b1e3de80d
+
 ### 文件目录结构如下
 <pre>
 ├─ src    //主文件
