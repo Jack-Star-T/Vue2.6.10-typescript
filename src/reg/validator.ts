@@ -14,7 +14,7 @@ export const testTelephone = (rule: any, value: string, callback: any) => {
 };
 
 //统一社会信用代码的验证
-export const testSocialCodeReg = (rule, value, callback) => {
+export const testSocialCodeReg = (rule:any, value:any, callback:any) => {
   if(value){
     if(!SocialCodeReg.test(value)){
       callback(new Error('请输入18位统一社会信用代码'));
@@ -118,7 +118,7 @@ export const testQQ = (rule: any, value: string, callback: any) => {
 };
 
 //整数的校验
-export const testNumber = (rule, value, callback) => {
+export const testNumber = (rule:any, value:any, callback:any) => {
   if(value){
     if(!numberReg.test(value)){
       callback(new Error('请输入数字'));
@@ -131,7 +131,7 @@ export const testNumber = (rule, value, callback) => {
 };
 
 //数字或小数的验证
-export const testPrice = (rule, value, callback) => {
+export const testPrice = (rule:any, value:any, callback:any) => {
   if(value){
     if(!price.test(value)){
       callback(new Error('请输入数字'));
