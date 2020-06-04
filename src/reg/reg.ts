@@ -22,3 +22,12 @@ export const telephoneReg=/^((0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/;
 
 //密码校验，6-16位密码，至少使用字母、数字、符号中的2种组合
 export const passwordReg= /^(?![0-9]+$)(?![a-z]+$)(?![A-Z]+$)(?!([^(0-9a-zA-Z)]|[])+$)([^(0-9a-zA-Z)]|[]|[a-z]|[A-Z]|[0-9]){6,}$/;
+
+//数字或小数正则
+export const price=/^[0-9]+([.]{1}[0-9]+){0,1}$/;
+
+//统一社会码
+export const SocialCodeReg=/^[0-9a-zA-Z]{18}$/;
+
+//整数的校验
+export const numberReg=/^[0-9]*$/;
