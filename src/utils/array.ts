@@ -53,3 +53,11 @@ export function removeArr (arr:Array<any>,value:string,strict:boolean) {
     arr.splice(index, 1);
   }
 }
+
+//二维数组删除指定元素 例如removeItem([['2','38']],['2','38']) 返回[]
+export function removeItem (arr:Array<any>,val:any) {
+  let index:number = arr.findIndex((x)=>JSON.stringify(x)===JSON.stringify(val));
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+}
