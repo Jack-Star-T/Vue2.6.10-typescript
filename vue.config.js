@@ -2,13 +2,19 @@
 const isProduction = process.env.NODE_ENV !== 'development';
 
 // 代码压缩
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 // gzip压缩
-const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
+
+//骨架屏渲染
+const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
+
+//path引入
+const path = require('path')
 
 // 本地环境是否需要使用cdn
-const devNeedCdn = false;
+const devNeedCdn = false
 
 // cdn链接
 const cdn = {
@@ -17,17 +23,23 @@ const cdn = {
         vue: 'Vue',
         vuex: 'Vuex',
         'vue-router': 'VueRouter',
+        'marked': 'marked',
+        'highlight.js': 'hljs',
+        'nprogress': 'NProgress',
         'axios': 'axios'
     },
     // cdn的css链接
     css: [
-
+        'https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css'
     ],
     // cdn的js链接
     js: [
         'https://cdn.bootcss.com/vue/2.6.10/vue.min.js',
         'https://cdn.bootcss.com/vuex/3.1.2/vuex.min.js',
         'https://cdn.bootcss.com/vue-router/3.1.3/vue-router.min.js',
+        'https://cdn.bootcss.com/marked/0.8.0/marked.min.js',
+        'https://cdn.bootcss.com/highlight.js/9.18.1/highlight.min.js',
+        'https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js',
         'https://cdn.bootcss.com/axios/0.19.2/axios.min.js'
     ]
 }
@@ -38,9 +50,9 @@ module.exports = {
         // ============注入cdn start============
         config.plugin('html').tap(args => {
             // 生产环境或本地需要cdn时，才注入cdn
-            if (isProduction || devNeedCdn) args[0].cdn = cdn;
+            if (isProduction || devNeedCdn) args[0].cdn = cdn
             return args
-        });
+        })
         // ============注入cdn start============
 
         // ============压缩图片 start============
@@ -54,12 +66,12 @@ module.exports = {
     },
     configureWebpack: config => {
         // 用cdn方式引入，则构建时要忽略相关资源
-        if (isProduction || devNeedCdn) config.externals = cdn.externals;
+        if (isProduction || devNeedCdn) config.externals = cdn.externals
 
         // 生产环境相关配置
         if (isProduction) {
             //gzip压缩
-            const productionGzipExtensions = ['html', 'js', 'css'];
+            const productionGzipExtensions = ['html', 'js', 'css']
             config.plugins.push(
                 new CompressionWebpackPlugin({
                     filename: '[path].gz[query]',
@@ -89,6 +101,17 @@ module.exports = {
                 })
             )
         }
+
+        // 骨架屏渲染
+        config.plugins.push(
+            new SkeletonWebpackPlugin({
+                webpackConfig: {
+                    entry: {
+                        app: path.join(__dirname,'./src/components/Skeleton/index.js')
+                    }
+                }
+            })
+        )
 
         // 公共代码抽离
         config.optimization = {

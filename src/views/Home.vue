@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" @click="testFunction" src="../assets/logo.png">
     <HelloWorld msg="bb"/>
   </div>
 </template>
