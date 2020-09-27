@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <HelloWorld msg="bb"/>
+    {{mobile | formatMobile}}
   </div>
 </template>
 
@@ -18,6 +19,7 @@ export default class Home extends Vue{
 
   //data
   bb:string='ddddddd';
+  mobile:String='17857094521';
 
   @State(state=>state.base.username) username!:boolean;
   @Getter('base/username') getUsername!:boolean;
@@ -48,7 +50,8 @@ export default class Home extends Vue{
 
   //生命周期
   mounted(){
-
+    this.$store.commit('user/SET_username','jack');
+    console.log(this.$store.getters['user/username'])
   }
   created(){
 

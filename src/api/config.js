@@ -8,5 +8,5 @@ if(window.location.hostname==='localhost'){    //本地开发
 }else{
   url=null;
 }
-
+console.log(process.env)
 export default url;

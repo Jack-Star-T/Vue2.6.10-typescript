@@ -13,7 +13,7 @@ if (Cookie.get('token')) {
 //供应商拉取公司列表
 export const login= (params) => {
   return new Promise((resolve, reject) => {
-    axios.post('/',params).then(res=>{
+    axios.post('/login',params).then(res=>{
       resolve(res)})
       .catch(error=>{reject(error)});
   })

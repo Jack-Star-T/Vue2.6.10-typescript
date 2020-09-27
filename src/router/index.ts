@@ -25,6 +25,7 @@ const routes = [
         meta:{
           title:'关于',
           keepAlive:false,
+          savedPosition:false,
         }
       }
     ]
@@ -36,6 +37,7 @@ const routes = [
     meta:{
       title:'首页',
       keepAlive:false,
+      savedPosition:false,
     }
   },
 ]
@@ -44,13 +46,16 @@ const router = new VueRouter({
   mode: 'history',
   // base: process.env.BASE_URL,
   routes,
-  scrollBehavior(to, from, savedPosition) {       //每次页面返回顶部
-    if (savedPosition) {
-      return savedPosition;
-    } else {
-      return {x: 0, y: 0};
-    }
-  },
+  scrollBehavior(to, from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition;
+      } else {
+        if (from.meta.saveSrollTop) {
+          from.meta.savedPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        }
+        return { x: 0, y: to.meta.savedPosition || 0 };
+      }
+    },
 })
 
 router.beforeEach((to, from, next) => {
