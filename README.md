@@ -1,6 +1,6 @@
 
 
-> ### 基于Vue2.6.10+Typescript构建的空白项目，包括css样式的初始化，以及基本常用的axios,vue-router,模块化使用vuex，element-ui已经按需引入配置好，还有axios拦截器，axios请求的全局loaindg加载，路由组件懒加载，以及对于不同环境的基本Url封装，还附带了一些常用的方法，以及包括打包优化的cdn引入，代码压缩，图片压缩，关闭map等打包优化都已配置完成,关于ts的使用，要使用修饰符，在Home.vue中，常用的使用方法我也都已经列举出来了，（现已新增首屏渲染loding效果，效果可以参考于我的个人网站，我的**个人网站将于不久开源**，请多多支持）
+> ### 基于Vue2.6.10+Typescript构建的空白项目，包括css样式的初始化，以及基本常用的axios,vue-router,模块化使用vuex，element-ui已经按需引入配置好，还有axios拦截器，axios请求的全局loaindg加载，路由组件懒加载，以及对于不同环境的基本Url封装，还附带了一些常用的方法，以及包括打包优化的cdn引入，代码压缩，图片压缩，关闭map等打包优化都已配置完成,关于ts的使用，要使用修饰符，在Home.vue中，常用的使用方法我也都已经列举出来了，（现已新增首屏渲染loding效果，效果可以参考于我的个人网站，我的**个人网站以开源**，请多多支持，地址如下https://github.com/Jack-Star-T/Cool-Dream）
 
 > #### 关于作者:cooldream
 > #### 个人网站:https://www.cooldream.fun
