@@ -47,6 +47,9 @@ const cdn = {
 module.exports = {
     productionSourceMap: false,
     chainWebpack: config => {
+        // ============预先加载模块 关闭============
+        // config.plugins.delete('prefetch')
+        // ============预先加载模块 关闭============
         // ============注入cdn start============
         config.plugin('html').tap(args => {
             // 生产环境或本地需要cdn时，才注入cdn
