@@ -46,6 +46,16 @@ const cdn = {
 
 module.exports = {
     productionSourceMap: false,
+    css: {
+        loaderOptions: {
+            postcss: {
+                plugins: [
+                    // 设计稿宽度的1/10，一般为75,设计稿为1920
+                    require('postcss-px2rem')({ remUnit: 192 }),
+                ]
+            }
+        }
+    },
     chainWebpack: config => {
         // ============预先加载模块 关闭============
         // config.plugins.delete('prefetch')
