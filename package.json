@@ -15,7 +15,7 @@
     "core-js": "^3.4.4",
     "element-ui": "^2.4.5",
     "image-webpack-loader": "^6.0.0",
-    "moment": "^2.29.0",
+    "moment": "^2.29.2",
     "postcss-px2rem": "^0.3.0",
     "qs": "^6.9.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
