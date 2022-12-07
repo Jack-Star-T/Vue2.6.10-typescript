@@ -17,7 +17,7 @@
     "image-webpack-loader": "^6.0.0",
     "moment": "^2.29.0",
     "postcss-px2rem": "^0.3.0",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
